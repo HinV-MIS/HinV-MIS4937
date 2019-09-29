@@ -1,24 +1,41 @@
-Started GET "/" for 129.7.0.54 at 2019-09-24 19:43:58 +0000
-Cannot render console from 129.7.0.54! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (19.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCars (20190926172240)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "cars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "model" varchar, "year" varchar, "description" text, "color" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190926172240"]]
+  [1m[35m (13.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-26 17:24:04.226953"], ["updated_at", "2019-09-26 17:24:04.226953"]]
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 129.7.0.24 at 2019-09-26 17:26:55 +0000
+Cannot render console from 129.7.0.24! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (3.9ms)
+Completed 200 OK in 22ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 129.7.0.24 at 2019-09-26 17:26:58 +0000
+Cannot render console from 129.7.0.24! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/car-listings-h" for 129.7.0.24 at 2019-09-26 17:27:47 +0000
+Cannot render console from 129.7.0.24! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
   
-ActiveRecord::PendingMigrationError (
-
-Migrations are pending. To resolve this issue, run:
-
-        bin/rails db:migrate RAILS_ENV=development
-
-):
+ActionController::RoutingError (No route matches [GET] "/car-listings-h"):
   
-activerecord (5.0.7.2) lib/active_record/migration.rb:573:in `check_pending!'
-activerecord (5.0.7.2) lib/active_record/migration.rb:549:in `call'
-actionpack (5.0.7.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
-activesupport (5.0.7.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
-activesupport (5.0.7.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
-activesupport (5.0.7.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
-actionpack (5.0.7.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
-actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.7.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
-actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
 web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
@@ -44,69 +61,18 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
   Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (4.6ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.1ms)
   Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
-  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.6ms)
-  [1m[35m (15.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
-  [1m[35m (21.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Migrating to CreateCars (20190924194344)
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "cars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "mode" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
-  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190924194344"]]
-  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
-  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-24 19:44:11.394996"], ["updated_at", "2019-09-24 19:44:11.394996"]]
-  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Started GET "/" for 129.7.0.54 at 2019-09-24 19:44:23 +0000
-Cannot render console from 129.7.0.54! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Processing by Rails::WelcomeController#index as HTML
-  Parameters: {"internal"=>true}
-  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
-  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
-Completed 200 OK in 15ms (Views: 8.3ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/cars" for 129.7.0.54 at 2019-09-24 19:44:26 +0000
-Cannot render console from 129.7.0.54! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by CarsController#index as HTML
-  Rendering cars/index.html.erb within layouts/application
-  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
-  Rendered cars/index.html.erb within layouts/application (10.2ms)
-Completed 200 OK in 618ms (Views: 611.9ms | ActiveRecord: 1.6ms)
-
-
-Started GET "/" for 73.206.214.141 at 2019-09-26 03:45:47 +0000
-Cannot render console from 73.206.214.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Processing by Rails::WelcomeController#index as HTML
-  Parameters: {"internal"=>true}
-  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
-  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
-Completed 200 OK in 17ms (Views: 8.1ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/" for 73.206.214.141 at 2019-09-26 03:45:53 +0000
-Cannot render console from 73.206.214.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Rails::WelcomeController#index as HTML
-  Parameters: {"internal"=>true}
-  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
-  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
-Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/car-listings" for 73.206.214.141 at 2019-09-26 03:46:38 +0000
-Cannot render console from 73.206.214.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.8ms)
+Started GET "/labs/car-listings-h" for 129.7.0.24 at 2019-09-26 17:28:07 +0000
+Cannot render console from 129.7.0.24! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
   
-ActionController::RoutingError (No route matches [GET] "/car-listings"):
+ActionController::RoutingError (No route matches [GET] "/labs/car-listings-h"):
   
 actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -137,17 +103,226 @@ puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
   Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
   Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
   Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
-  Rendered collection of /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (4.4ms)
-  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (15.8ms)
+  Rendered collection of /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (2.3ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
   Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
-  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (41.5ms)
-Started GET "/" for 73.206.214.141 at 2019-09-26 03:47:17 +0000
-Cannot render console from 73.206.214.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (16.9ms)
+Started GET "/" for 129.7.0.24 at 2019-09-26 17:30:19 +0000
+Cannot render console from 129.7.0.24! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 129.7.0.24 at 2019-09-26 17:30:21 +0000
+Cannot render console from 129.7.0.24! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 129.7.0.24 at 2019-09-26 17:30:39 +0000
+Cannot render console from 129.7.0.24! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cars" for 129.7.0.24 at 2019-09-26 17:47:12 +0000
+Cannot render console from 129.7.0.24! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (0.1ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 658ms (Views: 655.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cars/new" for 129.7.0.24 at 2019-09-26 17:47:17 +0000
+Cannot render console from 129.7.0.24! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/_form.html.erb (11.9ms)
+  Rendered cars/new.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 34ms (Views: 28.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/cars" for 129.7.0.24 at 2019-09-26 17:48:00 +0000
+Cannot render console from 129.7.0.24! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XchGQC0XsoPhfMGZzOcqnZK+6F5j3CSS+f1E2tEQInK8ttjNdv3X41hc3poy113kle68Av316HTlz/R5siyM1g==", "car"=>{"model"=>"t", "year"=>"2019", "description"=>"dsfsdf", "color"=>"yellow"}, "commit"=>"Create Car"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "t"], ["year", "2019"], ["description", "dsfsdf"], ["color", "yellow"], ["created_at", "2019-09-26 17:48:00.480389"], ["updated_at", "2019-09-26 17:48:00.480389"]]
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://8a1cf0ed5459493ebcc99b61f2c585da.vfs.cloud9.us-east-2.amazonaws.com/cars/1
+Completed 302 Found in 20ms (ActiveRecord: 13.9ms)
+
+
+Started GET "/cars/1" for 129.7.0.24 at 2019-09-26 17:48:01 +0000
+Cannot render console from 129.7.0.24! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 15.6ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 17:54:31.780514"], ["updated_at", "2019-09-26 17:54:31.780514"]]
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s1"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:35:30.775987"], ["updated_at", "2019-09-26 18:35:30.775987"]]
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s2"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:36:47.443840"], ["updated_at", "2019-09-26 18:36:47.443840"]]
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s3"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:36:58.513307"], ["updated_at", "2019-09-26 18:36:58.513307"]]
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s4"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:37:12.207838"], ["updated_at", "2019-09-26 18:37:12.207838"]]
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s5"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:37:19.970874"], ["updated_at", "2019-09-26 18:37:19.970874"]]
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s6"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:37:30.878761"], ["updated_at", "2019-09-26 18:37:30.878761"]]
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s7"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:37:50.832312"], ["updated_at", "2019-09-26 18:37:50.832312"]]
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s8"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:38:05.512684"], ["updated_at", "2019-09-26 18:38:05.512684"]]
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s9"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:38:27.982544"], ["updated_at", "2019-09-26 18:38:27.982544"]]
+  [1m[35m (16.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s10"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:38:46.882916"], ["updated_at", "2019-09-26 18:38:46.882916"]]
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s11"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:38:57.103165"], ["updated_at", "2019-09-26 18:38:57.103165"]]
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s12"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:39:04.923174"], ["updated_at", "2019-09-26 18:39:04.923174"]]
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s13"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:39:12.473456"], ["updated_at", "2019-09-26 18:39:12.473456"]]
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s14"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:39:19.047264"], ["updated_at", "2019-09-26 18:39:19.047264"]]
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s15"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:39:26.870732"], ["updated_at", "2019-09-26 18:39:26.870732"]]
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s16"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:39:40.362532"], ["updated_at", "2019-09-26 18:39:40.362532"]]
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s17"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:39:47.775570"], ["updated_at", "2019-09-26 18:39:47.775570"]]
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s18"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:39:54.450271"], ["updated_at", "2019-09-26 18:39:54.450271"]]
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s19"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:40:01.142792"], ["updated_at", "2019-09-26 18:40:01.142792"]]
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cars" ("model", "year", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["model", "Tesla Model s20"], ["year", "2016"], ["description", "This car is awesome"], ["color", "red"], ["created_at", "2019-09-26 18:40:12.410356"], ["updated_at", "2019-09-26 18:40:12.410356"]]
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "cars"[0m
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateDealerships (20190926192655)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "dealerships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "address" varchar, "city" varchar, "state" varchar, "zip" varchar, "owner" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190926192655"]]
+  [1m[35m (14.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSalesmen (20190926192656)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "salesmen" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email_address" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190926192656"]]
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateProspects (20190926192657)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "prospects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email_address" varchar, "address" varchar, "city" varchar, "state" varchar, "zip" varchar, "mobile_phone_number" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190926192657"]]
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 98.195.44.127 at 2019-09-29 03:04:14 +0000
+Cannot render console from 98.195.44.127! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 14ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 98.195.44.127 at 2019-09-29 03:04:16 +0000
+Cannot render console from 98.195.44.127! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 98.195.44.127 at 2019-09-29 03:04:25 +0000
+Cannot render console from 98.195.44.127! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
 Processing by Rails::WelcomeController#index as HTML
   Parameters: {"internal"=>true}
   Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
   Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
 Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cars" for 98.195.44.127 at 2019-09-29 03:04:30 +0000
+Cannot render console from 98.195.44.127! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 293ms (Views: 288.5ms | ActiveRecord: 1.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "cars"[0m
+Started GET "/" for 98.195.44.127 at 2019-09-29 03:14:01 +0000
+Cannot render console from 98.195.44.127! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 13ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 98.195.44.127 at 2019-09-29 03:14:03 +0000
+Cannot render console from 98.195.44.127! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cars" for 98.195.44.127 at 2019-09-29 03:14:08 +0000
+Cannot render console from 98.195.44.127! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 199ms (Views: 191.2ms | ActiveRecord: 1.0ms)
 
 
