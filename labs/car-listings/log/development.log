@@ -2415,3 +2415,95 @@ Processing by ProspectsController#index as HTML
 Completed 200 OK in 210ms (Views: 206.4ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/" for 129.7.0.88 at 2019-10-03 18:15:11 +0000
+Cannot render console from 129.7.0.88! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (3.1ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 129.7.0.88 at 2019-10-03 18:15:13 +0000
+Cannot render console from 129.7.0.88! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/salesmen" for 129.7.0.88 at 2019-10-03 18:15:50 +0000
+Cannot render console from 129.7.0.88! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SalesmenController#index as HTML
+  Rendering salesmen/index.html.erb within layouts/application
+  [1m[36mSalesman Load (0.5ms)[0m  [1m[34mSELECT "salesmen".* FROM "salesmen"[0m
+  Rendered salesmen/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 208ms (Views: 202.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cars" for 129.7.0.88 at 2019-10-03 18:19:35 +0000
+Cannot render console from 129.7.0.88! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (1.7ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/application (65.6ms)
+Completed 200 OK in 87ms (Views: 81.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/prospects" for 129.7.0.88 at 2019-10-03 18:20:20 +0000
+Cannot render console from 129.7.0.88! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProspectsController#index as HTML
+  Rendering prospects/index.html.erb within layouts/application
+  [1m[36mProspect Load (0.5ms)[0m  [1m[34mSELECT "prospects".* FROM "prospects"[0m
+  Rendered prospects/index.html.erb within layouts/application (58.8ms)
+Completed 200 OK in 85ms (Views: 79.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 129.7.0.70 at 2019-10-10 18:13:50 +0000
+Cannot render console from 129.7.0.70! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 13ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 129.7.0.70 at 2019-10-10 18:13:52 +0000
+Cannot render console from 129.7.0.70! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cars" for 129.7.0.70 at 2019-10-10 18:13:57 +0000
+Cannot render console from 129.7.0.70! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (1.9ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/application (71.0ms)
+Completed 200 OK in 497ms (Views: 491.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/dealerships" for 129.7.0.70 at 2019-10-10 18:14:09 +0000
+Cannot render console from 129.7.0.70! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DealershipsController#index as HTML
+  Rendering dealerships/index.html.erb within layouts/application
+  [1m[36mDealership Load (0.3ms)[0m  [1m[34mSELECT "dealerships".* FROM "dealerships"[0m
+  Rendered dealerships/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 43ms (Views: 40.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/prospects" for 129.7.0.70 at 2019-10-10 18:14:34 +0000
+Cannot render console from 129.7.0.70! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProspectsController#index as HTML
+  Rendering prospects/index.html.erb within layouts/application
+  [1m[36mProspect Load (0.5ms)[0m  [1m[34mSELECT "prospects".* FROM "prospects"[0m
+  Rendered prospects/index.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 43ms (Views: 39.1ms | ActiveRecord: 0.9ms)
+
+
